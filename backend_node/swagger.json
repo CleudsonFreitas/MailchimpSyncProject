@@ -1,0 +1,118 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Trio Sync NodeJS Backend API",
+    "description": "Trio Sync Take-home Challenge Backend Project (Cleudson Freitas)",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:8081",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Contacts",
+      "description": "API for sync contacts between mockAPI and mailChimp"
+    }
+  ],
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/contacts": {
+      "get": {
+        "tags": ["Contacts"],
+        "summary": "Get all contacts",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Contact"
+            }
+          }
+        }
+      }
+    },
+    "/contacts/sync": {
+      "get": {
+        "tags": ["Contacts"],
+        "summary": "Syncs contacts from mockAPI to mailChimp",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Contact"
+            }
+          }
+        }
+      }
+    },
+    "/contacts/{contactId}": {
+      "parameters": [
+        {
+          "name": "contactId",
+          "in": "path",
+          "required": true,
+          "description": "ID of contact",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": ["Contacts"],
+        "summary": "Get a contact by id",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Contact"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Contacts"],
+        "summary": "Delete a contact by id",
+        "responses": {
+          "200": {
+            "description": "User is deleted",
+            "schema": {
+              "$ref": "#/definitions/Contact"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Contact": {
+      "required": ["id", "firstName", "lastName", "email", "avatar", "createdAt",  "mailChimpMemberId"],
+      "properties": {
+      "id": {
+          "type": "integer",
+          "uniqueItems": true
+      },
+      "firstName": {
+          "type": "string"
+      },
+      "lastName": {
+          "type": "string"
+      },
+      "email": {
+          "type": "string"
+      },
+      "avatar": {
+          "type": "string"
+          },
+      "createdAt": {
+          "type": "date"
+          },
+      "mailChimpMemberId": {
+          "type": "string"
+          }
+      }
+    }
+  }
+}
+  

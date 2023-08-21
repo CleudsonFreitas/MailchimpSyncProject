@@ -1,0 +1,19 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.App {
+  margin: auto;
+  padding: 200px 0;
+  text-align: center;
+  width: 50%;
+  height: 50%;
+  background-image: url('/public/fundo_sync.png');
+  background-size: 522px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}

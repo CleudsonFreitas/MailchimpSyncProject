@@ -1,0 +1,24 @@
+INSTRUCTIONS TO DEPLOY BOTH: BACKEND AND FRONTEND ON LOCAL MACHINE
+
+1) Deploy backend on localmachine:
+
+	1.1) install .net 6 runtime on machine
+	1.2) into de deploy\backend directory run the command: dotnet backend.dll 
+	
+			Note: 	This command will run the backend on https port 8081;
+					To access the SwaggerUI just type https://localhost:8081/swagger
+
+2) Deploy frontend on localmachine:
+
+	2.1) just copy the deploy\frontend content to any local webserver on port 80
+	
+			Note: 	I used uniform server (https://uniformserver.com/) to it on windows;
+					For uniformserver, i just copy the content to "..\UniServerZ\www";
+					So, just access http://localhost/ .
+
+3) Mailchimp
+
+	3.1) apikey: 		e5dd6580abef369bcd4b6e9acbd5836a-us21
+	3.2) audienceid: 	cc55800fc9
+
+	
